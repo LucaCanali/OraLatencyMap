@@ -4,22 +4,25 @@
 -- and displays data as two heatmaps: a Frequency heatmap and an Intensity heatMap
 -- This script is intended to be used to measure the latency drilldown for calibrate_io workload 
 --
--- The example here below is added for convenience. It shows how to run calibrate_io workload from sql*plus
+-- The example here below is added for convenience. It shows how to run calibrate_io workload from sqlplus
 -- 
 /* 
- SET SERVEROUTPUT ON
-  DECLARE
-   lat  INTEGER;
-   iops INTEGER;
-   mbps INTEGER;
- BEGIN
-    DBMS_RESOURCE_MANAGER.CALIBRATE_IO (10, 100, iops, mbps, lat);
- 
-    DBMS_OUTPUT.PUT_LINE ('max_iops = ' || iops);
-    DBMS_OUTPUT.PUT_LINE ('latency  = ' || lat);
-   DBMS_OUTPUT.PUT_LINE ('max_mbps = ' || mbps);
- END;
- /
+SET SERVEROUTPUT ON
+DECLARE
+  l_latency PLS_INTEGER;
+  l_iops PLS_INTEGER;
+  l_mbps PLS_INTEGER;
+BEGIN
+  DBMS_RESOURCE_MANAGER.calibrate_io (num_physical_disks => 4,
+    max_latency => 10,
+    max_iops => l_iops,
+    max_mbps => l_mbps,
+    actual_latency => l_latency);
+  DBMS_OUTPUT.put_line('Max IOPS = ' || l_iops);
+  DBMS_OUTPUT.put_line('Max MBPS = ' || l_mbps);
+  DBMS_OUTPUT.put_line('Latency = ' || l_latency);
+END;
+/
 */
 
 @@OraLatencyMap_advanced 3 "Disk file I/O Calibration" 11 90 ""
