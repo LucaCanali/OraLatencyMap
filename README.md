@@ -279,9 +279,11 @@ This workflow lets you quickly validate the scripts and visualize latency heat m
 ---
 ## 📖 References
 
-- Blog: [Recent updates of OraLatencyMap](externaltable.blogspot.com/2014/03/…)
-- Blog: [Latency Heat Map in SQL\*Plus](externaltable.blogspot.com/2013/05/…)
-- Scripts: [Oracle_DBA_scripts](https://github.com/LucaCanali/Oracle_DBA_scripts) → see `ehm_micro.sql`
+- Blog: [Troubleshoot I/O & Wait Latency with OraLatencyMap and PyLatencyMap](https://db-blog.web.cern.ch/node/199)
+- Blog: [Recent updates of OraLatencyMap](https://externaltable.blogspot.com/2014/03/recent-updates-of-oralatencymap-and.html)
+- Blog: [Latency Heat Map in SQL\*Plus](https://externaltable.blogspot.com/2013/05/latency-heat-map-in-sqlplus-with.html)
+- Heatmaps in Python [PyLatencyMap](https://github.com/LucaCanali/PyLatencyMap) 
+- Oracle DBA scripts: [Oracle_DBA_scripts](https://github.com/LucaCanali/Oracle_DBA_scripts) → see `ehm_micro.sql`
 
 ---
 ## Acknowledgements
